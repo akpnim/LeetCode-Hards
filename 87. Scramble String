@@ -1,0 +1,25 @@
+class Solution:
+    def isScramble(self, s1: str, s2: str) -> bool:
+        if s1 == s2:
+            return True 
+        if len(s1) != len(s2):
+            return False 
+        sets1 = {char for char in s1}
+        sets2 = {char for char in s2}
+        if sets1 != sets2: 
+            return False 
+        first = s1[0]
+        last = s1[-1]
+        index_first = s2.find(first)
+        index_last = s2.find(last)
+        if index_first > index_last: 
+            return False  
+        else: 
+            return 0 #work on this case!!!
+
+s1 = "abcde"
+s2 = "caebd"
+test = Solution()
+ans = test.isScramble(s1,s2)
+print(ans)
+        
